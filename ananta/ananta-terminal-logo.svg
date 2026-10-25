@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="745" height="745" viewBox="0 0 745 745" role="img" aria-labelledby="title desc">
+  <title id="title">Ananta terminal logo</title>
+  <desc id="desc">A glowing cyan terminal window in perspective, with a smaller terminal pane receding to the left.</desc>
+  <defs>
+    <linearGradient id="cyan" x1="0" y1="0" x2="1" y2="0.2">
+      <stop offset="0" stop-color="#25d9f3"/>
+      <stop offset="1" stop-color="#3af5f5"/>
+    </linearGradient>
+    <linearGradient id="blue" x1="0" y1="0" x2="1" y2="0.2">
+      <stop offset="0" stop-color="#15516f"/>
+      <stop offset="1" stop-color="#1688b0"/>
+    </linearGradient>
+    <radialGradient id="background" cx="50%" cy="50%" r="75%">
+      <stop offset="0" stop-color="#071116"/>
+      <stop offset="1" stop-color="#030809"/>
+    </radialGradient>
+    <filter id="glow" x="-35%" y="-35%" width="170%" height="170%">
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feColorMatrix in="blur" type="matrix" values="0 0 0 0 0.03  0 0 0 0 0.72  0 0 0 0 0.92  0 0 0 0.72 0" result="coloredBlur"/>
+      <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="softGlow" x="-35%" y="-35%" width="170%" height="170%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="745" height="745" fill="url(#background)"/>
+  <ellipse cx="390" cy="370" rx="320" ry="220" fill="#00c7ef" opacity=".035" filter="url(#softGlow)"/>
+
+  <!-- Receding terminal rail -->
+  <g fill="none" stroke-linejoin="round">
+    <path d="M47 260 L309 180 L309 212 L47 273 Z" fill="url(#blue)" opacity=".94"/>
+    <path d="M47 503 L309 554 L309 584 L47 516 Z" fill="url(#blue)" opacity=".9"/>
+    <!-- Rear terminal pane -->
+    <path d="M53 292 L299 244 Q309 242 309 254 L309 514 Q309 526 298 524 L53 483 Q44 481 44 471 L44 303 Q44 294 53 292 Z"
+          stroke="url(#blue)" stroke-width="11" fill="#030a0d" filter="url(#softGlow)"/>
+    <!-- Dim prompt in the rear pane -->
+    <path d="M84 355 L108 379 L84 395" stroke="url(#blue)" stroke-width="11" stroke-linecap="butt" stroke-linejoin="miter"/>
+    <path d="M124 394 L167 394" stroke="url(#blue)" stroke-width="14" stroke-linecap="butt"/>
+  </g>
+
+  <!-- Main terminal pane -->
+  <path d="M351 160 L704 220 Q714 222 714 233 L714 505 Q714 516 704 519 L352 588 Q337 590 337 575 L337 175 Q337 159 351 160 Z"
+        fill="#030b0e" stroke="url(#cyan)" stroke-width="4" opacity=".18" filter="url(#softGlow)"/>
+  <path d="M351 160 L704 220 Q714 222 714 233 L714 505 Q714 516 704 519 L352 588 Q337 590 337 575 L337 175 Q337 159 351 160 Z"
+        fill="#030a0d" stroke="url(#cyan)" stroke-width="18" stroke-linejoin="round" filter="url(#glow)"/>
+
+  <!-- Terminal prompt -->
+  <path d="M410 263 L447 294 L410 326" fill="none" stroke="url(#cyan)" stroke-width="17" stroke-linecap="butt" stroke-linejoin="miter" filter="url(#glow)"/>
+  <path d="M465 334 L534 334" fill="none" stroke="url(#cyan)" stroke-width="23" stroke-linecap="butt" filter="url(#glow)"/>
+</svg>
